@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 8
+    commands:
+      # Install dependencies needed for running tests
+      - npm install --silent --no-progress -g npm
+      - npm install --silent --no-progress -g serverless
+  pre_build:
+    commands:
+      # Discover and run unit tests in the 'tests' directory
+      - npm install --silent --no-progress
+  #
+  build:
+    commands:
+    #- npm run test
+    #- npm run migration
+
