@@ -1,0 +1,7 @@
+entity:
+    handler: app/entity/entity_srv.handler
+    events: 
+      - http:
+          path: /entity
+          method: GET
+          cors: true
