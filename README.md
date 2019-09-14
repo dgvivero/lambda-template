@@ -4,13 +4,18 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* This is a template REST API for AWS Lambda with Express Framework
 
 ### How do I get set up? ###
 
 * Summary of set up
+After cloning this repo, you need to setup some usefull tools
+First install Serveless FrameWork, we are going to use it to test and deploy 
+ours app.
+`npm install -g serverless`
+Then we also need serverless-offline plugin, and all the necesary dependencies
+so get it run:
+`npm install`
 * Configuration
 * Dependencies
 * Database configuration
