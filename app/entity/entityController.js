@@ -2,11 +2,11 @@ const Entity = require('./entityModel');
 
 /** 
  * @sumary Call a service to access db
- * @returns {Array} roles list where onboarding is  TRUE.
+ * @returns {Array} Entity.
 */
 exports.list = async (req, res, next)=>{
     try{
-        res.locals.entities = await Entity.findAll({where:{onboarding: true}, order: ['id']});
+        res.locals.entities = await Entity.findAll();
         next()
     } catch(err) {
         err.message += "Error db -  entity ";
@@ -15,6 +15,10 @@ exports.list = async (req, res, next)=>{
       
 };
 
+/** 
+ * @sumary Create an entity
+ * 
+*/
 exports.add = async (req, res, next)=>{
     try{
       let entity = req.body;

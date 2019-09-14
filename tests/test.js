@@ -1,19 +1,28 @@
 'use strict';
 const assert = require('assert');
-const supertest = require('supertest'); 
+const supertest = require('supertest');
+const Entity = require('../app/entity/entityModel') 
 const req = supertest('http://localhost:3000');
 
-describe('Tests app', function() {
+describe('Tests for Entity', function() {
   let res;
-  it('verifies get', async function() {
+  before( async function(){
+    await Entity.sync({force:true});
+  });
+  
+  it('POST data',async function() {
+     const anEntity = {
+                       name: 'anString', 
+                       active: true,
+                       createAt: new Date(),
+                       updateAt: new Date()
+                      }
+        res = await req.post('/entity').send(anEntity);
+        assert.equal(res.status, 201)
+    });
+
+  it('GET data', async function() {
     res = await req.get('/entity');
     assert.equal(res.status,200);
   });
-  // it('verifies post', function(done) {
-  //   request.post('/').expect(200).end(function(err, result) {
-  //       test.string(result.body.Output).contains('Hello');
-  //       test.value(result).hasHeader('content-type', 'application/json; charset=utf-8');
-  //       done(err);
-  //   });
-  // });
-});
+  });

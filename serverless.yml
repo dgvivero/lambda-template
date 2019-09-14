@@ -20,13 +20,7 @@ provider:
   memorySize: 128
   stage: ${self:custom.stage}
   region: us-east-1
-  #profile: CodeStarWorker-test-ToolChain
-  #VPC for all lambdas
-  #vpc:
-  #    securityGroupIds: 
-  #      - ${ssm:/${self:custom.stage}/sme/rds/LambdaSecurityGroup}
-  #    subnetIds: { Fn::Split: [ ",", "${ssm:/${self:custom.stage}/sme/vpc/PrivateSubnetsList}" ] }
-
+  
 # be careful, this will route every HTTP event to your function.
 functions:
   - ${file(aws-functions/entity.yml)}

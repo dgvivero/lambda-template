@@ -5,3 +5,7 @@ entity:
           path: /entity
           method: GET
           cors: true
+      - http:
+          path: /entity
+          method: POST
+          cors: true

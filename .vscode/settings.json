@@ -1,0 +1,9 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "./mydb.sqlite",
+            "dialect": "SQLite",
+            "name": "localDB"
+        }
+    ]
+}

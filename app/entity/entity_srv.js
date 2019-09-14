@@ -16,13 +16,12 @@ app.use(bodyParser.json());
 //use routes
 app.use('/entity', entityRoutes);
 
-app.use(clientErrorHandler);
 //Custom error handler
 function clientErrorHandler (err, req, res, next) {
-   res.status(500).send(err);
+   res.status(500).send(err.message);
    next(err)
 }
-
+app.use(clientErrorHandler);
 
 const server = awsServerlessExpress.createServer(app)
 
