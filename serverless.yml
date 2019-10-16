@@ -1,5 +1,5 @@
 
-service: esme-pump-connector # NOTE: update this with your service name
+service: lambda-entity # NOTE: update this with your service name
 
 plugins:
   - serverless-offline
